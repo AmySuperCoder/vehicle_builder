@@ -261,8 +261,9 @@ class Cli {
         parseInt(answers.topSpeed),
         parseInt(answers.frontWheelDiameter),
         answers.frontWheelBrand, 
-        parseInt(answers.rearWheelDiameter),
+        parseInt(answers.frontWheelDiameter),
         answers.rearWheelBrand,
+        parseInt(answers.rearWheelDiameter),
         []
       );
         this.vehicles.push(motorbike);
