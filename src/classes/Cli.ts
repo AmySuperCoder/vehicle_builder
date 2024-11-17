@@ -174,6 +174,7 @@ class Cli {
         },
       ])
       .then((answers) => {
+        const wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
         const truck = new Truck(
           Cli.generateVin(),
           answers.color,
@@ -182,8 +183,8 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
+          wheels,
           parseInt(answers.towingCapacity),
-          []
         );
         this.vehicles.push(truck);
         this.selectedVehicleVin = truck.vin;
@@ -251,6 +252,7 @@ class Cli {
         },
       ])
       .then((answers) => {
+        const wheels = [new Wheel(), new Wheel()];
       const motorbike = new Motorbike(
         Cli.generateVin(),
         answers.color,
