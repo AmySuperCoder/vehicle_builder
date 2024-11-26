@@ -302,7 +302,11 @@ class Cli {
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
         else {
           truck.tow(answers.vehicleToTow);
-          this.performActions()
+          console.log('You are now towing a vehicle.')
+          setTimeout(() => {
+            this.performActions() 
+          }, 3000);
+          
         }
       });
   }
@@ -395,7 +399,7 @@ class Cli {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
               if (this.vehicles[i] instanceof Truck){
                 const truck = this.vehicles[i] as Truck;
-                this.findVehicleToTow(truck);
+                return this.findVehicleToTow(truck);
               }
             }
           }
@@ -404,7 +408,7 @@ class Cli {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
               if (this.vehicles[i] instanceof Motorbike) {
                 const motorbike = this.vehicles[i] as Motorbike;
-                this.wheelie(motorbike);
+                motorbike.wheelie();
               
               }
             }
